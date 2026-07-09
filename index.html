@@ -1,0 +1,570 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ржаной двор - ремесленная пекарня и кофейня в Москве</title>
+    <meta
+      name="description"
+      content="Ржаной двор - городская пекарня на Садовой-Кудринской: хлеб на закваске, спокойные завтраки, фильтр-кофе, предзаказ и самовывоз каждый день."
+    />
+    <meta property="og:title" content="Ржаной двор" />
+    <meta
+      property="og:description"
+      content="Свежий хлеб, утренние завтраки, небольшие партии выпечки и понятный предзаказ без лишних шагов."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header" data-header>
+      <a class="brand" href="#top" aria-label="Ржаной двор">
+        <span class="brand-mark">РД</span>
+        <span class="brand-copy">
+          <span class="brand-name">Ржаной двор</span>
+          <span class="brand-note">пекарня · кофейня · самовывоз</span>
+        </span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-toggle>
+        Меню
+      </button>
+
+      <nav class="nav" id="site-nav" aria-label="Основная навигация" data-nav>
+        <a href="#menu">Витрина</a>
+        <a href="#story">О пекарне</a>
+        <a href="#gallery">Атмосфера</a>
+        <a href="#reviews">Отзывы</a>
+        <a href="#visit">Как нас найти</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="header-link" href="tel:+79015552418">Позвонить</a>
+        <a class="header-action" href="#order">Предзаказ</a>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Каждый день с 07:30 · Садовая-Кудринская, 18</p>
+          <h1>Свежий хлеб на каждый день, завтраки до 13:00 и предзаказ без лишних шагов.</h1>
+          <p class="hero-text">
+            Ржаной двор - небольшая городская пекарня на Садовой-Кудринской. Утром можно забежать за кофе и
+            выпечкой, днем взять спокойный завтрак, а вечером - хлеб домой. На сайте сразу видно, что есть на
+            витрине и когда удобнее забрать заказ.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button primary" href="#order">Собрать предзаказ</a>
+            <a class="button ghost" href="#menu">Посмотреть витрину</a>
+          </div>
+
+          <div class="hero-facts" aria-label="Ключевая информация">
+            <article>
+              <span>с 07:30</span>
+              <strong>открыты каждый день</strong>
+            </article>
+            <article>
+              <span>11:40</span>
+              <strong>следующая партия хлеба</strong>
+            </article>
+            <article>
+              <span>до 20:00</span>
+              <strong>принимаем предзаказы на завтра</strong>
+            </article>
+          </div>
+        </div>
+
+        <div class="hero-media">
+          <video
+            class="hero-video"
+            src="assets/hero-bakery-video.mp4"
+            poster="assets/hero-bakery.jpg"
+            autoplay
+            muted
+            loop
+            playsinline
+          ></video>
+          <div class="hero-overlay"></div>
+          <div class="hero-card">
+            <span>Сегодня из печи</span>
+            <strong>ржаной с тмином</strong>
+            <small>готов к 11:40 · 340 ₽</small>
+          </div>
+          <div class="hero-note">
+            <span>Завтраки</span>
+            <strong>07:30-13:00</strong>
+          </div>
+          <div class="hero-badge">
+            <span>Самовывоз</span>
+            <strong>день в день и на следующее утро</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="proof-strip" aria-label="Короткая информация">
+        <article>
+          <span>Адрес</span>
+          <strong>Москва, Садовая-Кудринская, 18</strong>
+        </article>
+        <article>
+          <span>Часы работы</span>
+          <strong>ежедневно · 07:30-21:00</strong>
+        </article>
+        <article>
+          <span>Формат</span>
+          <strong>хлеб · кофе · завтраки · десерты</strong>
+        </article>
+        <article>
+          <span>Контакт</span>
+          <strong><a href="tel:+79015552418">+7 901 555-24-18</a></strong>
+        </article>
+      </section>
+
+      <section class="section offerings" id="menu">
+        <div class="section-heading">
+          <div class="heading-intro">
+            <p class="eyebrow">Сегодня на витрине</p>
+            <p class="heading-copy">
+              Витрина короткая и понятная: показываем состав, вес, время следующей партии и то, с чем позицию
+              удобнее взять в пару.
+            </p>
+            <div class="heading-badges" aria-label="Особенности витрины">
+              <span>небольшие партии</span>
+              <span>видно, что готово сейчас</span>
+              <span>удобный самовывоз</span>
+            </div>
+          </div>
+          <h2>Короткое меню того, за чем к нам действительно заходят каждый день.</h2>
+        </div>
+
+        <div class="offer-layout">
+          <div class="menu-grid">
+            <article
+              class="menu-item selected"
+              tabindex="0"
+              role="button"
+              aria-pressed="true"
+              data-item="Ржаной с тмином"
+              data-price="340"
+              data-weight="680 г"
+              data-kcal="214 ккал"
+              data-protein="6.2 г"
+              data-fat="2.4 г"
+              data-carbs="41.8 г"
+              data-compose="ржаная и пшеничная мука, закваска, тмин, морская соль"
+              data-bake="выходит из печи к 11:40 и повторно к 18:10"
+              data-pairing="лучше всего к сливочному маслу, мягким сырам и грибному супу"
+              data-note="Плотный ароматный хлеб для дома. Хорошо хранится и остается вкусным на следующий день."
+            >
+              <img src="assets/product-rye-bread.jpg" alt="Ржаной хлеб с тмином" />
+              <div class="menu-item-copy">
+                <span class="item-type">закваска · 680 г</span>
+                <h3>Ржаной с тмином</h3>
+                <p>Хрустящая корка, насыщенный аромат и плотный мякиш для завтраков, супов и бутербродов дома.</p>
+                <strong>340 ₽</strong>
+              </div>
+            </article>
+
+            <article
+              class="menu-item"
+              tabindex="0"
+              role="button"
+              aria-pressed="false"
+              data-item="Круассан с миндалем"
+              data-price="230"
+              data-weight="110 г"
+              data-kcal="438 ккал"
+              data-protein="8.1 г"
+              data-fat="24.9 г"
+              data-carbs="43.2 г"
+              data-compose="слоеное тесто на сливочном масле, миндальный крем, сахарная пудра"
+              data-bake="лучше брать утром, пока слои держат максимум хруста"
+              data-pairing="подходит к капучино, флэт уайту и черному чаю"
+              data-note="Слоеная выпечка на каждый день, но с ощущением спокойного выходного утра."
+            >
+              <img src="assets/product-croissant.jpg" alt="Круассан с миндалем" />
+              <div class="menu-item-copy">
+                <span class="item-type">слоеное · утро</span>
+                <h3>Круассан с миндалем</h3>
+                <p>Масляные слои, мягкий миндальный крем и аккуратная сладость без ощущения десерта на показ.</p>
+                <strong>230 ₽</strong>
+              </div>
+            </article>
+
+            <article
+              class="menu-item"
+              tabindex="0"
+              role="button"
+              aria-pressed="false"
+              data-item="Сырники с ягодами"
+              data-price="310"
+              data-weight="230 г"
+              data-kcal="286 ккал"
+              data-protein="14.3 г"
+              data-fat="11.6 г"
+              data-carbs="30.5 г"
+              data-compose="творог, яйцо, рисовая мука, сметана, ягодный соус, ваниль"
+              data-bake="готовим партиями с открытия до 13:00"
+              data-pairing="лучше всего работают с фильтром, американо или рафом без сиропов"
+              data-note="Спокойный завтрак для тех, кто хочет понятную подачу без перегруза."
+            >
+              <img src="assets/product-syrniki.jpg" alt="Сырники с ягодами" />
+              <div class="menu-item-copy">
+                <span class="item-type">завтрак · до 13:00</span>
+                <h3>Сырники с ягодами</h3>
+                <p>Нежные сырники с ягодным соусом и сметаной. Берут и на неторопливый завтрак, и по дороге на работу.</p>
+                <strong>310 ₽</strong>
+              </div>
+            </article>
+
+            <article
+              class="menu-item"
+              tabindex="0"
+              role="button"
+              aria-pressed="false"
+              data-item="Фокачча с розмарином"
+              data-price="260"
+              data-weight="240 г"
+              data-kcal="301 ккал"
+              data-protein="7.4 г"
+              data-fat="9.3 г"
+              data-carbs="46.2 г"
+              data-compose="пшеничная мука, оливковое масло, розмарин, морская соль"
+              data-bake="допекаем днем и держим на витрине до вечера"
+              data-pairing="хорошо работает с супами, салатами и кофе навынос"
+              data-note="Теплая фокачча для быстрого обеда, соседнего офиса или домой к ужину."
+            >
+              <img src="assets/product-focaccia.jpg" alt="Фокачча с розмарином" />
+              <div class="menu-item-copy">
+                <span class="item-type">выпечка · день</span>
+                <h3>Фокачча с розмарином</h3>
+                <p>Теплая мякоть, оливковое масло и аромат розмарина. Работает как быстрый перекус и как хлеб к ужину.</p>
+                <strong>260 ₽</strong>
+              </div>
+            </article>
+          </div>
+
+          <aside class="menu-aside" aria-label="Дополнительная информация">
+            <div class="aside-card product-card">
+              <div class="product-card-top">
+                <span class="card-kicker">Выбрано сейчас</span>
+                <strong data-product-name>Ржаной с тмином</strong>
+                <p data-product-note>
+                  Плотный ароматный хлеб для дома. Хорошо хранится и остается вкусным на следующий день.
+                </p>
+              </div>
+
+              <div class="product-stats">
+                <div>
+                  <span>Вес</span>
+                  <strong data-product-weight>680 г</strong>
+                </div>
+                <div>
+                  <span>Цена</span>
+                  <strong data-product-price>340 ₽</strong>
+                </div>
+                <div>
+                  <span>КБЖУ</span>
+                  <strong data-product-kcal>214 ккал</strong>
+                </div>
+              </div>
+
+              <div class="product-macros" aria-label="Пищевая ценность">
+                <div><span>Белки</span><strong data-product-protein>6.2 г</strong></div>
+                <div><span>Жиры</span><strong data-product-fat>2.4 г</strong></div>
+                <div><span>Углеводы</span><strong data-product-carbs>41.8 г</strong></div>
+              </div>
+
+              <dl class="product-meta">
+                <div>
+                  <dt>Состав</dt>
+                  <dd data-product-compose>ржаная и пшеничная мука, закваска, тмин, морская соль</dd>
+                </div>
+                <div>
+                  <dt>Когда лучше забрать</dt>
+                  <dd data-product-bake>выходит из печи к 11:40 и повторно к 18:10</dd>
+                </div>
+                <div>
+                  <dt>С чем взять</dt>
+                  <dd data-product-pairing>лучше всего к сливочному маслу, мягким сырам и грибному супу</dd>
+                </div>
+              </dl>
+
+              <a class="button primary product-order-link" href="#order">Отложить выбранное</a>
+            </div>
+
+            <div class="aside-card">
+              <span class="card-kicker">Хиты недели</span>
+              <ul class="feature-list">
+                <li>Бриошь с соленой карамелью - 240 ₽</li>
+                <li>Пшеничный с семечками - 290 ₽</li>
+                <li>Фокачча с розмарином - 260 ₽</li>
+                <li>Фильтр недели: Эфиопия Гуджи - 220 ₽</li>
+              </ul>
+            </div>
+
+            <div class="aside-card subtle">
+              <span class="card-kicker">Как работает витрина</span>
+              <p>
+                Не держим весь ассортимент до вечера. Хлеб выходит партиями, а на сайте видно, что можно забрать
+                сразу и что лучше отложить через форму.
+              </p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section gallery" id="gallery">
+        <div class="section-heading compact">
+          <div class="compact-note">
+            <p class="eyebrow">Почему запоминается</p>
+            <strong>Спокойная посадка, живая витрина и понятный городской ритм без лишнего шума.</strong>
+            <span>Этот блок работает как визуальное доказательство: сюда заходят не за абстрактной концепцией, а за местом, в которое удобно вернуться утром, днем и по дороге домой.</span>
+          </div>
+          <h2>Светлый зал, спокойное утро и детали, ради которых хочется зайти еще раз.</h2>
+        </div>
+
+        <div class="gallery-grid">
+          <article class="gallery-feature">
+            <img src="assets/bakery-interior.jpg" alt="Интерьер пекарни" />
+            <div class="gallery-copy">
+              <span class="card-kicker">Интерьер</span>
+              <h3>Посадка у больших окон и открытая работа команды внутри зала.</h3>
+            </div>
+          </article>
+
+          <article class="gallery-card">
+            <img src="assets/bakery-breakfast.jpg" alt="Завтрак в пекарне" />
+            <div class="gallery-copy">
+              <span class="card-kicker">Завтрак</span>
+              <h3>Сырники, круассан и фильтр без ощущения постановочного brunch-кафе.</h3>
+            </div>
+          </article>
+
+          <article class="gallery-card">
+            <img src="assets/bakery-detail-square.jpg" alt="Детали пекарни" />
+            <div class="gallery-copy">
+              <span class="card-kicker">Детали</span>
+              <h3>Крафт, крошки, хлеб и кофе - то, что собирает атмосферу лучше слов.</h3>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section story" id="story">
+        <div class="story-media">
+          <video
+            class="story-video"
+            src="assets/bakery-process-video.mp4"
+            poster="assets/bakery-process.jpg"
+            autoplay
+            muted
+            loop
+            playsinline
+          ></video>
+        </div>
+
+        <div class="story-copy">
+          <p class="eyebrow">Открытая печь и небольшие партии</p>
+          <h2>Небольшие партии, открытая работа команды и понятный ритм в течение всего дня.</h2>
+          <p>
+            Тесто подходит ночью, первая партия выходит к открытию, а днем команда печет еще раз, чтобы к вечеру
+            на полке снова был свежий хлеб. Поэтому у нас удобно и на быстрый утренний кофе, и на хлеб домой после
+            работы.
+          </p>
+
+          <div class="timeline">
+            <div><span>06:20</span><strong>замес и раскатка первой партии</strong></div>
+            <div><span>07:30</span><strong>кофе, круассаны и завтраки</strong></div>
+            <div><span>11:40</span><strong>ржаной, пшеничный и фокачча</strong></div>
+            <div><span>17:10</span><strong>вечерние булочки и десертная полка</strong></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section details">
+        <div class="details-panel">
+          <article>
+            <span class="card-kicker">Продукты</span>
+            <h3>Локальная мука, сливочное масло и понятные вкусы без перегруженного меню.</h3>
+          </article>
+          <article>
+            <span class="card-kicker">Для района</span>
+            <h3>Утренний кофе, хлеб домой вечером и небольшие заказы для соседних офисов и студий.</h3>
+          </article>
+          <article>
+            <span class="card-kicker">Команда</span>
+            <h3>На смене всегда есть и пекарь, и бариста, поэтому сайт обещает только то, что заведение реально выдерживает.</h3>
+          </article>
+        </div>
+      </section>
+
+      <section class="section reviews" id="reviews">
+        <div class="section-heading reviews-heading">
+          <div class="review-summary">
+            <p class="eyebrow">Что удобно гостю</p>
+            <strong>Здесь всё устроено спокойно и по делу</strong>
+            <span>Без сложной корзины, длинных сценариев и лишних обещаний: видно, что на витрине сейчас, когда прийти и как быстро забрать заказ.</span>
+          </div>
+          <h2>Утром можно зайти за кофе и выпечкой, днем спокойно позавтракать, а вечером забрать хлеб домой без лишних шагов.</h2>
+        </div>
+
+        <div class="review-grid">
+          <article class="review-card">
+            <p>Витрина короткая и понятная: видно состав, цену, вес и когда выходит следующая партия, поэтому проще решить на месте и не тратить время на уточнения.</p>
+            <strong>Понятно с первого экрана</strong>
+            <span>особенно важно утром и в часы спешки</span>
+          </article>
+
+          <article class="review-card">
+            <p>Если хочется отложить хлеб или завтрак к удобному времени, достаточно оставить имя и телефон. Подтверждаем заказ быстро и без отдельной регистрации.</p>
+            <strong>Предзаказ без перегруза</strong>
+            <span>удобно для самовывоза в тот же день или на утро</span>
+          </article>
+
+          <article class="review-card">
+            <p>Адрес, часы работы, маршрут и телефон собраны в одном месте. Можно быстро понять, как дойти от метро, когда лучше зайти и как связаться, если заказ крупнее обычного.</p>
+            <strong>Ничего не нужно искать отдельно</strong>
+            <span>вся базовая информация уже под рукой</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="section order-section" id="order">
+        <div class="order-panel">
+          <div class="order-copy">
+            <p class="eyebrow">Предзаказ и самовывоз</p>
+          <h2>Простая заявка, быстрый звонок и самовывоз без сложной корзины.</h2>
+          <p>
+            Выберите позицию, оставьте имя и телефон, а мы подтвердим заказ и подготовим его к удобному времени.
+            Если нужно срочно, можно просто позвонить и уточнить, что сейчас на витрине. Онлайн-оплату на сайте не
+            требуем: подтверждаем заказ отдельно.
+          </p>
+            <div class="order-shortcuts">
+              <a class="button ghost light" href="tel:+79015552418">Позвонить в пекарню</a>
+              <a class="button ghost light" href="#visit">Построить маршрут</a>
+            </div>
+            <ul class="order-notes">
+              <li>Подтверждаем заказ звонком или сообщением в течение 15 минут.</li>
+              <li>Самовывоз в день заказа или на следующее утро.</li>
+              <li>Крупные заказы на офис - от 8 позиций и выше.</li>
+            </ul>
+          </div>
+
+          <form
+            class="order-form"
+            data-order-form
+            data-order-endpoint=""
+            data-order-endpoint-type="google-sheets"
+          >
+            <label>
+              Что отложить
+              <input name="item" data-order-item value="Ржаной с тмином" />
+            </label>
+            <label>
+              Количество
+              <input name="quantity" type="number" min="1" max="12" value="1" data-quantity />
+            </label>
+            <label>
+              На когда
+              <select name="pickup">
+                <option>Сегодня после 12:00</option>
+                <option>Сегодня после 17:30</option>
+                <option>Завтра к 08:00</option>
+                <option>Завтра к 10:00</option>
+              </select>
+            </label>
+            <label>
+              Имя
+              <input name="name" placeholder="Например, Анна" required />
+            </label>
+            <label>
+              Телефон
+              <input name="phone" placeholder="+7 900 000-00-00" required />
+            </label>
+            <label>
+              Комментарий
+              <input name="comment" placeholder="Например, нарезать хлеб или добавить 2 фильтра" />
+            </label>
+            <div class="form-footer">
+              <span data-order-total>Итого: 340 ₽</span>
+              <button class="button primary" type="submit" data-order-submit>Оставить заявку</button>
+            </div>
+            <p class="form-status" data-form-status aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+
+      <section class="section visit" id="visit">
+        <div class="visit-copy">
+          <p class="eyebrow">Как нас найти</p>
+          <h2>Адрес, часы работы и маршрут без лишнего поиска.</h2>
+          <div class="visit-grid">
+            <article>
+              <span>Адрес</span>
+              <h3>Москва, Садовая-Кудринская, 18</h3>
+              <p>Пять минут пешком от метро "Баррикадная". Вход с улицы, витрина и посадка у больших окон.</p>
+            </article>
+            <article>
+              <span>Часы работы</span>
+              <h3>Ежедневно · 07:30-21:00</h3>
+              <p>Завтраки до 13:00, хлеб на полке партиями, предзаказы принимаем до 20:00.</p>
+            </article>
+            <article>
+              <span>Контакты</span>
+              <h3><a href="tel:+79015552418">+7 901 555-24-18</a></h3>
+              <p>Если нужен крупный заказ на офис или ранний самовывоз, удобнее написать заранее или быстро подтвердить детали в мессенджере.</p>
+              <div class="messenger-list" aria-label="Мессенджеры">
+                <span class="messenger-chip">Telegram</span>
+                <span class="messenger-chip">WhatsApp</span>
+                <span class="messenger-chip">MAX</span>
+              </div>
+              <small class="contact-note">Для шаблона можно подключить любой рабочий канал: Telegram, WhatsApp, MAX или форму с подтверждением через таблицу/CRM.</small>
+            </article>
+          </div>
+        </div>
+
+        <div class="map-card">
+          <iframe
+            title="Карта Ржаного двора"
+            src="https://yandex.ru/map-widget/v1/?ll=37.584874%2C55.759867&mode=search&text=%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0%2C%20%D0%A1%D0%B0%D0%B4%D0%BE%D0%B2%D0%B0%D1%8F-%D0%9A%D1%83%D0%B4%D1%80%D0%B8%D0%BD%D1%81%D0%BA%D0%B0%D1%8F%2C%2018&z=16"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+          <div class="map-caption">
+            <strong>Яндекс Карты</strong>
+            <a
+              href="https://yandex.ru/maps/?text=%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0%2C%20%D0%A1%D0%B0%D0%B4%D0%BE%D0%B2%D0%B0%D1%8F-%D0%9A%D1%83%D0%B4%D1%80%D0%B8%D0%BD%D1%81%D0%BA%D0%B0%D1%8F%2C%2018"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Открыть маршрут
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-main">
+        <strong>Ржаной двор</strong>
+        <span>Москва, Садовая-Кудринская, 18 · ежедневно 07:30-21:00</span>
+        <small>Предзаказ, витрина на сегодня и быстрый маршрут до пекарни без лишних экранов.</small>
+      </div>
+      <div class="footer-meta">
+        <strong>Реквизиты</strong>
+        <span>Безнал, корпоративные заказы и документы по запросу</span>
+        <small>В финальной версии под клиента здесь размещаются реквизиты, ИНН, ОГРН и условия оплаты без изменения структуры сайта.</small>
+      </div>
+      <div class="footer-links">
+        <a href="tel:+79015552418">+7 901 555-24-18</a>
+        <a href="#visit">Telegram · WhatsApp · MAX</a>
+        <a href="#visit">Как нас найти</a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
