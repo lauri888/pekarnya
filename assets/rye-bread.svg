@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 650" role="img" aria-label="Ржаной хлеб">
+  <rect width="900" height="650" fill="#d9ddd2"/>
+  <circle cx="740" cy="120" r="180" fill="#60705c" opacity=".28"/>
+  <circle cx="160" cy="560" r="220" fill="#a84b32" opacity=".16"/>
+  <rect x="96" y="424" width="708" height="58" rx="29" fill="#1f211d" opacity=".18"/>
+  <path d="M156 348c28-132 142-230 297-230 169 0 287 94 322 230 16 63-32 124-101 131-145 16-296 15-438 0-62-7-93-69-80-131z" fill="#8c4f2a"/>
+  <path d="M198 332c35-96 123-168 254-168 140 0 238 68 278 164 17 40-13 78-61 84-143 18-289 17-426 0-44-5-58-43-45-80z" fill="#bd7b3d"/>
+  <g fill="none" stroke="#efc57c" stroke-linecap="round" stroke-width="22" opacity=".72">
+    <path d="M286 246c48 35 78 88 88 155"/>
+    <path d="M438 190c22 64 26 135 12 210"/>
+    <path d="M584 216c-18 62-12 125 22 181"/>
+  </g>
+</svg>

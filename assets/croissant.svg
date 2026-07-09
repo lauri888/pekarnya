@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 650" role="img" aria-label="Круассан">
+  <rect width="900" height="650" fill="#efe6d4"/>
+  <rect x="78" y="80" width="744" height="490" rx="8" fill="#fffaf0" opacity=".5"/>
+  <ellipse cx="458" cy="432" rx="310" ry="58" fill="#20211d" opacity=".12"/>
+  <path d="M180 340c88-176 246-234 356-188 126 53 167 218 99 302-78 96-249 81-347 8-55-41-88-82-108-122z" fill="#d3913d"/>
+  <path d="M202 336c78 44 150 55 217 34 78-25 133-91 164-191 84 61 98 191 40 262-69 84-217 68-302 5-55-41-94-80-119-110z" fill="#b96d30"/>
+  <path d="M272 292c76 37 150 38 222 4M348 187c44 60 62 129 54 205M520 168c-28 82-32 163-8 242" fill="none" stroke="#f4c36d" stroke-width="24" stroke-linecap="round" opacity=".74"/>
+  <circle cx="678" cy="167" r="98" fill="#40566f" opacity=".18"/>
+</svg>

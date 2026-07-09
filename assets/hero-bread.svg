@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1500" role="img" aria-label="Свежий хлеб на пекарском столе">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2f3d35"/>
+      <stop offset="0.48" stop-color="#6b4b34"/>
+      <stop offset="1" stop-color="#d8b56f"/>
+    </linearGradient>
+    <radialGradient id="light" cx="60%" cy="34%" r="58%">
+      <stop offset="0" stop-color="#fff3c7" stop-opacity=".84"/>
+      <stop offset=".58" stop-color="#fff3c7" stop-opacity=".1"/>
+      <stop offset="1" stop-color="#1f211d" stop-opacity=".2"/>
+    </radialGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="3" seed="8"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 .14"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+  <rect width="1200" height="1500" fill="url(#bg)"/>
+  <rect width="1200" height="1500" fill="url(#light)"/>
+  <g opacity=".18" stroke="#fffaf0" stroke-width="2">
+    <path d="M94 212h1012M94 428h1012M94 644h1012M94 860h1012M94 1076h1012M94 1292h1012"/>
+    <path d="M190 92v1308M406 92v1308M622 92v1308M838 92v1308M1054 92v1308"/>
+  </g>
+  <ellipse cx="626" cy="1007" rx="438" ry="138" fill="#211b16" opacity=".28"/>
+  <g transform="translate(178 564)">
+    <path d="M76 340c18-182 162-318 362-318 214 0 363 132 392 316 13 82-47 156-134 164-158 15-334 15-494 0-81-8-135-80-126-162z" fill="#8f542c"/>
+    <path d="M126 328c24-139 139-246 307-246 180 0 304 102 346 242 18 60-21 113-86 121-157 18-333 19-493 0-59-7-84-58-74-117z" fill="#c98743"/>
+    <path d="M206 196c67 55 115 135 130 244M395 112c38 89 52 199 32 334M590 130c-21 94-22 196 18 300" fill="none" stroke="#f1c47b" stroke-width="30" stroke-linecap="round" opacity=".7"/>
+    <path d="M89 358c251 79 487 78 729 0" fill="none" stroke="#5b331d" stroke-width="18" stroke-linecap="round" opacity=".45"/>
+  </g>
+  <g fill="#fffaf0" opacity=".82">
+    <circle cx="902" cy="386" r="7"/>
+    <circle cx="954" cy="428" r="4"/>
+    <circle cx="310" cy="472" r="5"/>
+    <circle cx="842" cy="1186" r="4"/>
+  </g>
+  <rect width="1200" height="1500" filter="url(#grain)" opacity=".55"/>
+</svg>

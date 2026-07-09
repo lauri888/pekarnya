@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 650" role="img" aria-label="Сырники с ягодами">
+  <rect width="900" height="650" fill="#dde3df"/>
+  <circle cx="450" cy="340" r="245" fill="#fffaf0"/>
+  <circle cx="450" cy="340" r="206" fill="none" stroke="#60705c" stroke-width="3" opacity=".28"/>
+  <ellipse cx="342" cy="340" rx="122" ry="78" fill="#d99a42"/>
+  <ellipse cx="514" cy="354" rx="126" ry="80" fill="#cd853a"/>
+  <ellipse cx="430" cy="252" rx="118" ry="72" fill="#e3ab54"/>
+  <g fill="#a84b32">
+    <circle cx="326" cy="244" r="24"/>
+    <circle cx="570" cy="282" r="20"/>
+    <circle cx="474" cy="428" r="22"/>
+    <circle cx="600" cy="406" r="15"/>
+  </g>
+  <path d="M283 316c90 62 233 72 372 10" fill="none" stroke="#fffaf0" stroke-width="30" stroke-linecap="round" opacity=".66"/>
+  <path d="M275 132c80-48 168-60 260-40" fill="none" stroke="#40566f" stroke-width="6" stroke-linecap="round" opacity=".2"/>
+</svg>

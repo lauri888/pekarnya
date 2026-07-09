@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1250" role="img" aria-label="Пекарь готовит тесто">
+  <defs>
+    <linearGradient id="wall" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#40566f"/>
+      <stop offset=".55" stop-color="#60705c"/>
+      <stop offset="1" stop-color="#a84b32"/>
+    </linearGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency=".72" numOctaves="3" seed="12"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="table" tableValues="0 .11"/></feComponentTransfer>
+    </filter>
+  </defs>
+  <rect width="1000" height="1250" fill="url(#wall)"/>
+  <rect x="92" y="84" width="816" height="1082" rx="8" fill="#fffaf0" opacity=".12"/>
+  <path d="M254 377c28-104 112-174 232-174 130 0 223 74 250 178" fill="none" stroke="#fffaf0" stroke-width="72" stroke-linecap="round" opacity=".86"/>
+  <circle cx="486" cy="276" r="102" fill="#e0b36c"/>
+  <path d="M254 540c42-98 129-152 235-152 110 0 199 58 244 153l72 320H188l66-321z" fill="#20211d" opacity=".72"/>
+  <path d="M276 604h416v316H276z" fill="#fffaf0" opacity=".82"/>
+  <ellipse cx="496" cy="922" rx="278" ry="78" fill="#ddb36e"/>
+  <path d="M220 826c172 55 359 54 558 0" fill="none" stroke="#f7d895" stroke-width="22" stroke-linecap="round" opacity=".68"/>
+  <g stroke="#fffaf0" stroke-width="3" opacity=".22">
+    <path d="M126 168h748M126 342h748M126 516h748M126 690h748M126 864h748M126 1038h748"/>
+    <path d="M250 120v1030M500 120v1030M750 120v1030"/>
+  </g>
+  <rect width="1000" height="1250" filter="url(#grain)" opacity=".72"/>
+</svg>
