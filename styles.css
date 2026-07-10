@@ -124,9 +124,11 @@ p {
 
 .brand {
   gap: 12px;
+  min-width: 0;
 }
 
 .brand-mark {
+  flex: 0 0 auto;
   display: grid;
   place-items: center;
   width: 46px;
@@ -154,6 +156,9 @@ p {
 }
 
 .brand-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   font-weight: 800;
 }
 
@@ -222,6 +227,7 @@ p {
 
 .header-actions {
   gap: 10px;
+  flex: 0 0 auto;
 }
 
 .header-link,
@@ -941,10 +947,36 @@ h3 {
   margin: 28px 0 20px;
 }
 
+.order-flow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.order-flow span {
+  min-height: 42px;
+  display: grid;
+  place-items: center;
+  padding: 8px 10px;
+  border: 1px solid rgba(255, 249, 241, 0.16);
+  border-radius: 14px;
+  color: rgba(255, 249, 241, 0.86);
+  background: rgba(255, 249, 241, 0.08);
+  font-size: 13px;
+  font-weight: 800;
+  text-align: center;
+}
+
 .order-form {
   display: grid;
-  grid-template-columns: 1fr 140px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
+  align-content: start;
+  padding: 18px;
+  border: 1px solid rgba(255, 249, 241, 0.13);
+  border-radius: 28px;
+  background: rgba(255, 249, 241, 0.08);
 }
 
 .order-form label {
@@ -954,17 +986,18 @@ h3 {
   font-size: 13px;
 }
 
+.order-form label:nth-child(1),
 .order-form label:nth-child(3),
 .order-form label:nth-child(4),
-.order-form label:nth-child(5),
-.order-form label:nth-child(6),
+.order-form label:nth-child(8),
 .form-footer,
 .form-status {
   grid-column: 1 / -1;
 }
 
 input,
-select {
+select,
+textarea {
   width: 100%;
   min-height: 50px;
   padding: 0 15px;
@@ -975,12 +1008,19 @@ select {
   outline: none;
 }
 
+textarea {
+  min-height: 112px;
+  padding-top: 14px;
+  resize: vertical;
+}
+
 select {
   appearance: none;
 }
 
 input:focus,
-select:focus {
+select:focus,
+textarea:focus {
   border-color: var(--glow);
   box-shadow: 0 0 0 4px rgba(240, 201, 134, 0.18);
 }
@@ -992,8 +1032,10 @@ select:focus {
 }
 
 .form-footer span {
-  font-size: 22px;
+  max-width: 24ch;
+  font-size: 20px;
   font-weight: 800;
+  line-height: 1.15;
 }
 
 .form-status {
@@ -1026,6 +1068,40 @@ select:focus {
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
+}
+
+.messenger-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.messenger-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 34px;
+  padding: 0 12px;
+  border: 1px solid rgba(177, 90, 56, 0.22);
+  border-radius: 999px;
+  color: var(--brick);
+  background: rgba(255, 249, 241, 0.7);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+a.messenger-chip:hover {
+  color: var(--paper-strong);
+  border-color: var(--brick);
+  background: var(--brick);
+}
+
+.contact-note {
+  display: block;
+  margin-top: 12px;
+  color: var(--muted);
+  line-height: 1.5;
 }
 
 .map-card {
@@ -1123,7 +1199,7 @@ body.menu-open {
 
 @media (max-width: 860px) {
   .site-header {
-    grid-template-columns: auto auto auto;
+    grid-template-columns: minmax(0, 1fr) auto auto;
   }
 
   .menu-toggle {
@@ -1179,12 +1255,25 @@ body.menu-open {
     border-radius: 0 0 24px 24px;
   }
 
+  .brand {
+    gap: 8px;
+  }
+
+  .brand-mark {
+    width: 42px;
+    height: 42px;
+  }
+
   .nav {
     top: calc(86px + env(safe-area-inset-top));
   }
 
   .brand-note,
   .header-link {
+    display: none;
+  }
+
+  .brand-name {
     display: none;
   }
 
@@ -1232,21 +1321,22 @@ body.menu-open {
 
   .hero-media,
   .story-media {
-    min-height: 380px;
+    min-height: 460px;
   }
 
   .hero-card,
   .hero-badge {
-    max-width: calc(100% - 28px);
+    max-width: none;
   }
 
+  .hero-card,
   .hero-note,
   .hero-badge {
     left: 14px;
+    right: 14px;
   }
 
   .hero-card {
-    right: 14px;
     bottom: 14px;
   }
 
@@ -1255,7 +1345,7 @@ body.menu-open {
   }
 
   .hero-badge {
-    bottom: 114px;
+    bottom: 134px;
   }
 
   .button,
@@ -1283,6 +1373,11 @@ body.menu-open {
 
   .order-form {
     grid-template-columns: 1fr;
+    padding: 14px;
+  }
+
+  .order-flow {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .timeline div {

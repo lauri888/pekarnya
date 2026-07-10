@@ -1,6 +1,5 @@
 const menuItems = Array.from(document.querySelectorAll("[data-item]"));
 let orderItem = document.querySelector("[data-order-item]");
-const quantityInput = document.querySelector("[data-quantity]");
 const total = document.querySelector("[data-order-total]");
 const form = document.querySelector("[data-order-form]");
 const status = document.querySelector("[data-form-status]");
@@ -21,7 +20,7 @@ function setSubmitState(isLoading) {
   }
 
   submitButton.disabled = isLoading;
-  submitButton.textContent = isLoading ? "Отправляем..." : "Оставить заявку";
+  submitButton.textContent = isLoading ? "Готовим бриф..." : "Скопировать бриф";
 }
 
 function getEndpointConfig() {
@@ -41,12 +40,63 @@ function isValidPhone(phone) {
 }
 
 function updateTotal() {
-  if (!quantityInput || !total) {
+  if (!total) {
     return;
   }
 
-  const quantity = Math.max(1, Number(quantityInput.value) || 1);
-  total.textContent = `Итого: ${selectedPrice * quantity} ₽`;
+  total.textContent = "Стоимость после согласования";
+}
+
+function setOrderIdea(value) {
+  if (!orderItem || !value) {
+    return;
+  }
+
+  if (orderItem.tagName === "SELECT") {
+    const matchingOption = Array.from(orderItem.options).find((option) => option.value === value);
+    if (matchingOption) {
+      orderItem.value = value;
+    } else {
+      orderItem.value = "Хочу обсудить идею";
+    }
+    return;
+  }
+
+  orderItem.value = value;
+}
+
+async function copyText(text) {
+  if (navigator.clipboard?.writeText) {
+    await navigator.clipboard.writeText(text);
+    return true;
+  }
+
+  const helper = document.createElement("textarea");
+  helper.value = text;
+  helper.setAttribute("readonly", "");
+  helper.style.position = "fixed";
+  helper.style.left = "-999px";
+  document.body.append(helper);
+  helper.select();
+  const copied = document.execCommand("copy");
+  helper.remove();
+  return copied;
+}
+
+function createOrderBrief(payload) {
+  return [
+    "Здравствуйте! Хочу обсудить индивидуальный заказ.",
+    `Что заказать: ${payload.item}`,
+    `На сколько человек: ${payload.guests}`,
+    `Повод: ${payload.occasion}`,
+    `Дата и время: ${payload.pickup}`,
+    `Бюджет: ${payload.budget}`,
+    `Имя: ${payload.name}`,
+    `Телефон: ${payload.phone}`,
+    payload.comment ? `Пожелания: ${payload.comment}` : "",
+  ]
+    .filter(Boolean)
+    .join("\n");
 }
 
 function createProductDetailsMarkup(item) {
@@ -96,7 +146,7 @@ function createProductDetailsMarkup(item) {
         </dl>
 
         <button class="button primary product-order-link" type="button" data-order-link>
-          Перейти к предзаказу
+          Обсудить похожий заказ
         </button>
       </div>
     </div>
@@ -184,9 +234,7 @@ function selectItem(item, shouldScroll = false) {
   item.querySelector("[data-item-details]")?.setAttribute("aria-hidden", "false");
   updateItemHint(item, true);
 
-  if (orderItem) {
-    orderItem.value = item.dataset.item;
-  }
+  setOrderIdea(item.dataset.item);
 
   selectedPrice = Number(item.dataset.price || 0);
   updateTotal();
@@ -279,17 +327,6 @@ function toggleMenu() {
 
 hydrateMenuItems();
 
-hydrateOrderItemControl();
-
-if (orderItem) {
-  orderItem.addEventListener("change", () => {
-    const matchingItem = menuItems.find((item) => item.dataset.item === orderItem.value);
-    if (matchingItem) {
-      selectItem(matchingItem, false);
-    }
-  });
-}
-
 menuItems.forEach((item) => {
   collapseItem(item);
 });
@@ -347,10 +384,6 @@ document.addEventListener("keydown", (event) => {
 
 window.addEventListener("scroll", updateActiveNavLink, { passive: true });
 
-if (quantityInput) {
-  quantityInput.addEventListener("input", updateTotal);
-}
-
 if (form) {
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
@@ -359,13 +392,15 @@ if (form) {
     const name = String(formData.get("name") || "").trim();
     const phone = String(formData.get("phone") || "").trim();
     const pickup = String(formData.get("pickup") || "").trim();
-    const quantity = Math.max(1, Number(formData.get("quantity")) || 1);
+    const guests = Math.max(1, Number(formData.get("guests")) || 1);
+    const occasion = String(formData.get("occasion") || "").trim();
+    const budget = String(formData.get("budget") || "").trim();
     const comment = String(formData.get("comment") || "").trim();
     const endpoint = getEndpointConfig();
 
-    if (!name || !phone) {
+    if (!name || !phone || !pickup) {
       if (status) {
-        status.textContent = "Заполните имя и телефон, чтобы можно было быстро подтвердить заказ.";
+        status.textContent = "Заполните имя, телефон и удобную дату, чтобы можно было быстро обсудить заказ.";
       }
       return;
     }
@@ -385,12 +420,14 @@ if (form) {
 
     const payload = {
       item: orderItem?.value || "",
-      quantity,
+      guests,
+      occasion,
       pickup,
+      budget,
       name,
       phone,
       comment,
-      total: selectedPrice * quantity,
+      total: "after_call",
       source: "site",
       endpointType: endpoint.type,
       submittedAt: new Date().toISOString(),
@@ -398,9 +435,13 @@ if (form) {
 
     try {
       if (!endpoint.url) {
+        const brief = createOrderBrief(payload);
+        const copied = await copyText(brief);
+
         if (status) {
-          status.textContent =
-            "Форма готова к подключению Google Sheets, CRM или мессенджера. Сейчас не хватает только адреса webhook, поэтому заявка пока не отправляется наружу.";
+          status.textContent = copied
+            ? "Бриф скопирован. Теперь позвоните в пекарню или отправьте этот текст в Telegram/WhatsApp."
+            : "Бриф готов, но браузер не дал скопировать текст. Можно позвонить в пекарню и продиктовать детали из формы.";
         }
         return;
       }
@@ -418,13 +459,10 @@ if (form) {
       }
 
       if (status) {
-        status.textContent = `Готово: ${name}, позиция «${payload.item}» записана на интервал «${pickup}». Подтвердим заказ в ближайшее время.`;
+        status.textContent = `Готово: ${name}, бриф «${payload.item}» сохранен. Теперь можно позвонить в пекарню и согласовать оплату.`;
       }
 
       form.reset();
-      if (quantityInput) {
-        quantityInput.value = 1;
-      }
 
       const defaultItem = document.querySelector(".menu-item.selected") || menuItems[0];
       if (defaultItem instanceof HTMLElement) {
@@ -433,7 +471,7 @@ if (form) {
     } catch (error) {
       if (status) {
         status.textContent =
-          "Не удалось отправить заявку. Можно повторить попытку или принять заказ по телефону, пока подключаем внешний канал.";
+          "Не удалось сохранить бриф во внешний канал. Можно скопировать детали из формы и позвонить в пекарню.";
       }
     } finally {
       setSubmitState(false);

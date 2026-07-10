@@ -292,7 +292,7 @@
                 </div>
               </dl>
 
-              <a class="button primary product-order-link" href="#order">Отложить выбранное</a>
+              <a class="button primary product-order-link" href="#order">Обсудить похожий заказ</a>
             </div>
 
             <div class="aside-card">
@@ -309,7 +309,7 @@
               <span class="card-kicker">Как работает витрина</span>
               <p>
                 Не держим весь ассортимент до вечера. Хлеб выходит партиями, а на сайте видно, что можно забрать
-                сразу и что лучше отложить через форму.
+                сразу и что удобно заказать под конкретный повод.
               </p>
             </div>
           </aside>
@@ -419,9 +419,9 @@
           </article>
 
           <article class="review-card">
-            <p>Если хочется отложить хлеб или завтрак к удобному времени, достаточно оставить имя и телефон. Подтверждаем заказ быстро и без отдельной регистрации.</p>
-            <strong>Предзаказ без перегруза</strong>
-            <span>удобно для самовывоза в тот же день или на утро</span>
+            <p>Гость быстро собирает детали будущего заказа: пирог, пиццу, набор выпечки или стол к событию. После этого он звонит в пекарню или пишет в мессенджер уже с понятным брифом.</p>
+            <strong>Заказы под событие без лишней переписки</strong>
+            <span>удобно для семейных праздников, офисов и постоянных гостей</span>
           </article>
 
           <article class="review-card">
@@ -435,22 +435,27 @@
       <section class="section order-section" id="order">
         <div class="order-panel">
           <div class="order-copy">
-            <p class="eyebrow">Предзаказ и самовывоз</p>
-          <h2>Простая заявка, быстрый звонок и самовывоз без сложной корзины.</h2>
+            <p class="eyebrow">Индивидуальный заказ</p>
+          <h2>Пироги, пицца, наборы выпечки и сладкий стол под конкретный повод.</h2>
           <p>
-            Выберите позицию, оставьте имя и телефон, а мы подтвердим заказ и подготовим его к удобному времени.
-            Если нужно срочно, можно просто позвонить и уточнить, что сейчас на витрине. Онлайн-оплату на сайте не
-            требуем: подтверждаем заказ отдельно.
+            Гость собирает короткий бриф и сам связывается с пекарней: звонит, пишет в Telegram или WhatsApp. Владелец
+            сразу понимает объем, дату и пожелания, называет итоговую стоимость и отправляет способ оплаты после разговора.
           </p>
             <div class="order-shortcuts">
-              <a class="button ghost light" href="tel:+79015552418">Позвонить в пекарню</a>
-              <a class="button ghost light" href="#visit">Построить маршрут</a>
+              <a class="button primary" href="tel:+79015552418">Позвонить в пекарню</a>
+              <a class="button ghost light" href="https://t.me/ryeyard_bakery" target="_blank" rel="noreferrer">Написать в Telegram</a>
             </div>
             <ul class="order-notes">
-              <li>Подтверждаем заказ звонком или сообщением в течение 15 минут.</li>
-              <li>Самовывоз в день заказа или на следующее утро.</li>
-              <li>Крупные заказы на офис - от 8 позиций и выше.</li>
+              <li>Вы звоните сами, когда удобно, и сразу обсуждаете заказ с пекарней.</li>
+              <li>Бриф можно скопировать и отправить в мессенджер перед разговором.</li>
+              <li>Оплата обсуждается после согласования состава, объема и времени готовности.</li>
             </ul>
+            <div class="order-flow" aria-label="Как проходит заказ">
+              <span>1. Бриф</span>
+              <span>2. Звонок</span>
+              <span>3. Согласование</span>
+              <span>4. Готовим</span>
+            </div>
           </div>
 
           <form
@@ -460,20 +465,41 @@
             data-order-endpoint-type="google-sheets"
           >
             <label>
-              Что отложить
-              <input name="item" data-order-item value="Ржаной с тмином" />
+              Что хотите заказать
+              <select name="item" data-order-item>
+                <option>Пирог или киш</option>
+                <option>Пицца на закваске</option>
+                <option>Торт или десерт</option>
+                <option>Набор выпечки</option>
+                <option>Завтрак или кофе-брейк в офис</option>
+                <option>Хочу обсудить идею</option>
+              </select>
             </label>
             <label>
-              Количество
-              <input name="quantity" type="number" min="1" max="12" value="1" data-quantity />
+              На сколько человек
+              <input name="guests" type="number" min="1" max="80" value="6" />
             </label>
             <label>
-              На когда
-              <select name="pickup">
-                <option>Сегодня после 12:00</option>
-                <option>Сегодня после 17:30</option>
-                <option>Завтра к 08:00</option>
-                <option>Завтра к 10:00</option>
+              Повод
+              <select name="occasion">
+                <option>Семейный ужин</option>
+                <option>День рождения</option>
+                <option>Офисный заказ</option>
+                <option>Подарок</option>
+                <option>Без повода, просто хочется вкусно</option>
+              </select>
+            </label>
+            <label>
+              Дата и время
+              <input name="pickup" placeholder="Например, пятница к 18:30" required />
+            </label>
+            <label>
+              Бюджет
+              <select name="budget">
+                <option>До 3 000 ₽</option>
+                <option>3 000-6 000 ₽</option>
+                <option>6 000-12 000 ₽</option>
+                <option>Обсудим после звонка</option>
               </select>
             </label>
             <label>
@@ -485,12 +511,12 @@
               <input name="phone" placeholder="+7 900 000-00-00" required />
             </label>
             <label>
-              Комментарий
-              <input name="comment" placeholder="Например, нарезать хлеб или добавить 2 фильтра" />
+              Пожелания к заказу
+              <textarea name="comment" data-order-details placeholder="Например, пицца без мяса, 2 пирога с сыром, забрать в субботу утром"></textarea>
             </label>
             <div class="form-footer">
-              <span data-order-total>Итого: 340 ₽</span>
-              <button class="button primary" type="submit" data-order-submit>Оставить заявку</button>
+              <span data-order-total>Стоимость после согласования</span>
+              <button class="button primary" type="submit" data-order-submit>Скопировать бриф</button>
             </div>
             <p class="form-status" data-form-status aria-live="polite"></p>
           </form>
@@ -517,11 +543,11 @@
               <h3><a href="tel:+79015552418">+7 901 555-24-18</a></h3>
               <p>Если нужен крупный заказ на офис или ранний самовывоз, удобнее написать заранее или быстро подтвердить детали в мессенджере.</p>
               <div class="messenger-list" aria-label="Мессенджеры">
-                <span class="messenger-chip">Telegram</span>
-                <span class="messenger-chip">WhatsApp</span>
-                <span class="messenger-chip">MAX</span>
+                <a class="messenger-chip" href="https://t.me/ryeyard_bakery" target="_blank" rel="noreferrer">@ryeyard_bakery</a>
+                <a class="messenger-chip" href="https://wa.me/79015552418" target="_blank" rel="noreferrer">WhatsApp</a>
+                <span class="messenger-chip">MAX: rye-yard</span>
               </div>
-              <small class="contact-note">Для шаблона можно подключить любой рабочий канал: Telegram, WhatsApp, MAX или форму с подтверждением через таблицу/CRM.</small>
+              <small class="contact-note">Контакты в шаблоне заменяются за минуту: телефон, Telegram username, WhatsApp и любой другой рабочий канал пекарни.</small>
             </article>
           </div>
         </div>
